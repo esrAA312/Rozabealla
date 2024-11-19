@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="ar" dir="rtl">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>روزبيلا</title>
+   <link rel="icon" href="images/Favicon.png" type="image/x-icon">
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+ 
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+<!-- bootstrap  -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    
+
+
+</head>
+
+<body>
+  
+<!-- header section starts  -->
+
+<header class="header">
+
+   <section class="flex">
+      <!-- Logo section linking to home -->
+      
+<a href="#home" class="logo">
+   <img src="images/ee.png " alt="روزبيلا" height="120">
+</a>
+
+  
+<!-- Navbar links -->
+      <nav class="navbar">
+         <a href="#home">منتجات</a>
+         <a href="#Services">طرق الدفع</a>
+         <a href="#faq">اسئلة متكرره</a>
+         <a href="#add">العناوين</a>
+         <a href="#con">تواصل معنا</a>
+      </nav>
+
+ <!-- Icons for menu, user, calculator, and more -->
+      
+
+   </section>
+
+</header>
+
+
+<!-- header section ends -->
+
+
+
+
+   <!-- Hock background  -->
+<div class="home-bg">
+   <section class="home" id="home">
+            <div class="content">
+               
+      </div>
+   </section>
+</div>
+<!-- menu section starts  -->
+
+<title>سلة المشتريات</title>
+<style>
+.car {
+  font-family: 'Cairo', sans-serif; /* خط مناسب للغة العربية */
+  text-align: center;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.car h1 {
+  color: #000000;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  font-size: 40px;
+  text-align: center;
+  background: #f9dfe9;
+  
+
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.product {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+
+.product p {
+  color: #666;
+  margin: 5px 0 15px;
+}
+
+.product input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.product button {
+  background-color: #242525;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+    .product button:hover {
+        background-color: #5c5e60;
+    }
+
+   /* Style for the cart icon */
+.cart-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #303031;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.cart-icon:hover {
+  background-color: #383a3c;
+  transform: scale(1.1);
+}
+
+   .cart-window {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background: white;
+        box-shadow: -2px 0 4px rgba(0, 0, 0, 0.2);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        padding: 20px;
+        overflow-y: auto;
+    }
+
+.cart-window.open {
+  transform: translateY(0);
+}
+
+.cart-header {
+  display: flex;
+  
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #45484b;
+  color: #fff;
+  border-top-left-radius: 15px;
+  justify-content: space-between;
+  
+ 
+      
+}
+
+.cart-header h2 {
+  font-size: 2rem;
+  margin: 0;
+  align-items: center;
+  
+}
+
+.cart-header button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.cart-header button:hover {
+  color: #991212;
+}
+
+#cart {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+
+#cart li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+
+.send-to-whatsapp {
+  font-size: 1.5rem; /* تغيير حجم الخط */
+  padding: 10px 20px; /* تحسين حجم الزر */
+  background-color: #25D366; /* لون واتساب */
+  color: white; /* لون النص */
+  border: none; /* إزالة الحدود */
+  border-radius: 5px; /* زوايا مستديرة */
+  cursor: pointer; /* تغيير المؤشر عند التمرير */
+}
+
+.send-to-whatsapp:hover {
+  background-color: #1EBE5D; /* تغيير اللون عند التمرير */
+}
+
+
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.cart-item-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.remove-button {
+    background-color: #ff4d4f;
+    color: #050505;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.remove-button:hover {
+    background-color: #020202;
+}
+
+
+
+/* General Cart Styles */
+#cartWindow {
+    position: fixed;
+    top: 10%;
+    right: -300px;
+    width: 300px;
+    height: 80%;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    z-index: 1000;
+    transition: right 0.3s ease;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#cartWindow.open {
+    right: 40px;
+}
+
+#cart {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 2px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.cart-item-image:hover {
+    transform: scale(1.1);
+}
+
+.cart-item-details {
+    flex: 1;
+    margin-right: 10px;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+.cart-item-details span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.remove-button {
+    background-color: #ff5c5c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+    background-color: #e04848;
+}
+
+/* Floating Cart Button */
+#toggleCartButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#toggleCartButton:hover {
+    background-color: #ffffff;
+}
+
+#toggleCartButton:before {
+    content: '🛒';
+    display: block;
+    font-size: 24px;
+    line-height: 50px;
+    text-align: center;
+}
+
+
+
+.cart-header
+</style>
+
+<div class="car">
+  <h1>منتجات</h1>
+  <div class="products">
+      <div class="product">
+          <img src="images/1.jpg" alt="منتج 1">
+          <h2>بيبي روز أحمر</h2>
+          <p>رقم المنتج: 101</p>
+          <input type="number" id="quantity-101" min="1" value="1">
+          <button onclick="addToCart('بيبي روز أحمر', 101, 'images/1.jpg')">إضافة إلى السلة</button>
+      </div>
+      <div class="product">
+          <img src="images/2.jpg" alt="منتج 2">
+          <h2>بيبي روز أصفر</h2>
+          <p>رقم المنتج: 102</p>
+          <input type="number" id="quantity-102" min="1" value="1">
+          <button onclick="addToCart('بيبي روز أصفر', 102, 'images/2.jpg')">إضافة إلى السلة</button>
+      </div>
+      <div class="product">
+          <img src="images/3.jpg" alt="منتج 3">
+          <h2>بيبي روز فوشي</h2>
+          <p>رقم المنتج: 103</p>
+          <input type="number" id="quantity-103" min="1" value="1">
+          <button onclick="addToCart('بيبي روز فوشي', 103, 'images/3.jpg')">إضافة إلى السلة</button>
+      </div>
+      <div class="product">
+          <img src="images/4.jpg" alt="منتج 4">
+          <h2>بيبي روز أورنج</h2>
+          <p>رقم المنتج: 104</p>
+          <input type="number" id="quantity-104" min="1" value="1">
+          <button onclick="addToCart('بيبي روز أورنج', 104, 'images/4.jpg')">إضافة إلى السلة</button>
+      </div>
+      <div class="product">
+          <img src="images/5.jpg" alt="منتج 5">
+          <h2>جوري وردي غامق</h2>
+          <p>رقم المنتج: 105</p>
+          <input type="number" id="quantity-105" min="1" value="1">
+          <button onclick="addToCart('جوري وردي غامق', 105, 'images/5.jpg')">إضافة إلى السلة</button>
+      </div>
+      <div class="product">
+          <img src="images/6.jpg" alt="منتج 6">
+          <h2>جوري أصفر</h2>
+          <p>رقم المنتج: 106</p>
+          <input type="number" id="quantity-106" min="1" value="1">
+          <button onclick="addToCart('جوري أصفر', 106, 'images/6.jpg')">إضافة إلى السلة</button>
+      </div>
+      <div class="product">
+          <img src="images/7.jpg" alt="منتج 7">
+          <h2>جوري دبل كلر</h2>
+          <p>رقم المنتج: 107</p>
+          <input type="number" id="quantity-107" min="1" value="1">
+          <button onclick="addToCart('جوري دبل كلر', 107, 'images/7.jpg')">إضافة إلى السلة</button>
+      </div>
+      <div class="product">
+          <img src="images/8.jpg" alt="منتج 8">
+          <h2>جوري أحمر</h2>
+          <p>رقم المنتج: 108</p>
+          <input type="number" id="quantity-108" min="1" value="1">
+          <button onclick="addToCart('جوري أحمر', 108, 'images/8.jpg')">إضافة إلى السلة</button>
+      </div>
+  </div>
+</div>
+
+<div class="cart-icon" onclick="toggleCart()">
+  <i class="fa-solid fa-cart-shopping"></i>
+</div>
+
+<div class="cart-window" id="cartWindow">
+  <div class="cart-header">
+      <h2>سلة المشتريات</h2>
+      <button onclick="toggleCart()">X</button>
+  </div>
+  <ul id="cart"></ul>
+  <button class="send-to-whatsapp" onclick="sendToWhatsApp()">إرسال إلى واتساب</button>
+</div>
+
+<script>
+function addToCart(productName, productId, productImage) {
+    const quantityInput = document.getElementById(`quantity-${productId}`);
+    const quantity = parseInt(quantityInput.value, 10);
+
+    if (quantity <= 0 || isNaN(quantity)) {
+        alert("الرجاء إدخال كمية صحيحة أكبر من 0.");
+        return;
+    }
+
+    const cart = document.getElementById('cart');
+    const existingItem = document.getElementById(`cart-item-${productId}`);
+
+    if (existingItem) {
+        // إذا كان المنتج موجودًا، قم بتحديث الكمية فقط
+        existingItem.setAttribute('data-quantity', quantity);
+        existingItem.querySelector('.quantity').textContent = `الكمية: ${quantity}`;
+    } else {
+        // إذا كان المنتج جديدًا، أضفه إلى السلة
+        const listItem = document.createElement('li');
+        listItem.id = `cart-item-${productId}`;
+        listItem.setAttribute('data-quantity', quantity);
+        listItem.classList.add('cart-item');
+        listItem.innerHTML = `
+            <img src="${productImage}" alt="${productName}" class="cart-item-image">
+            <div class="cart-item-details">
+                <span>${productName}</span>
+                <span class="quantity">الكمية: ${quantity}</span>
+            </div>
+            <button onclick="removeFromCart(${productId})" class="remove-button">حذف</button>
+        `;
+        cart.appendChild(listItem);
+    }
+}
+
+function removeFromCart(productId) {
+    const item = document.getElementById(`cart-item-${productId}`);
+    if (item) {
+        item.remove();
+    }
+}
+
+function toggleCart() {
+    const cartWindow = document.getElementById('cartWindow');
+    cartWindow.classList.toggle('open');
+}
+
+function sendToWhatsApp() {
+    const cart = document.getElementById('cart').children;
+    let message = "أريد الحصول على هذه المنتجات:\n";
+
+    for (let item of cart) {
+        const productName = item.querySelector('.cart-item-details span').textContent.trim();
+        const quantity = item.getAttribute('data-quantity');
+        message += `- ${productName} : ${quantity} وحدة\n`;
+    }
+
+    if (message === "أريد الحصول على هذه المنتجات:\n") {
+        alert("السلة فارغة!");
+        return;
+    }
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/966544878380?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+}
+</script>
+
+
+<!-- menu section ends -->
+
+
+
+<!-- order section ends -->
+   
+<!-- Services section starts  -->
+
+<section class="Services" id="Services">
+
+   <h1 class="heading">طرق الدفع</h1>
+
+   <div class="box-container">
+
+      <div class="box">
+         <img src="images/S1.jpg" alt="دفع اجل">
+         <h3>دفع آجل </h3>
+         <p></p>
+        
+      </div>
+      <div class="box">
+         <img src="images/S2.png" alt="دفع عند الاستلام">
+         <h3>دفع عند الاستلام</h3>
+         <p></p>
+         
+      </div>
+      <div class="box">
+         <img src="images/S3.png" alt="تحويل بنكي">
+         <h3>دفع عبر التحويل البنكي</h3>
+         <p></p>
+        
+      </div>
+
+      
+
+   </div>
+
+</section>
+
+<!-- Services section ends -->
+   
+<!-- faq section starts  -->
+
+<section class="faq" id="faq">
+
+   <h1 class="heading">الاسئلة المتكررة</h1>
+
+   <div class="accordion accordion-flush" id="accordionFlushExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            من روزبيلا؟
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">هي مجموعة ثلاجات لبيج الورد بالجملة , نقوم ببيع وتوصيل الورد لكل مناطق المملكة العربية السعودية</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            من وين نستورد الورد؟
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">من اهم واكثر مزارع كينيا واثيويبا ازدهار</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            كيف يتم الطلب ؟ وكيف يتم الغاءه؟
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">كل ذلك يتم عبر الواتساب</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+            ....
+          </button>
+        </h2>
+        <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">...</div>
+        </div>
+      </div>
+     
+      </div>
+    </div>
+    
+   
+</section>
+
+<!-- faq section ends -->
+
+<style>
+  .add {
+      display: flex;
+      flex-direction: row; /* لجعل المربعات بجانب بعضها */
+      justify-content: center; /* توسيط العناصر أفقياً */
+      align-items: flex-start; /* محاذاة العناصر عمودياً */
+      gap: 20px; /* مسافة بين المربعات */
+      flex-wrap: wrap; /* لجعل العناصر تنتقل للسطر التالي إذا لم تكن الشاشة واسعة بما يكفي */
+  }
+
+  /* تنسيق العنوان الرئيسي */
+  .add h1 {
+      width: 100%;
+      margin-top: 20px;
+      margin-right: 50px;
+      margin-left: 50px;
+      font-size: 24px;
+      color: #000000;
+      text-align: center;
+      background: #f9dfe9;
+      font-size: 40px;
+ 
+     
+  }
+
+  
+  /* تنسيق المربعات */
+  .add .map-container {
+      width: 30%; /* عرض كل مربع بالنسبة للمساحة المتاحة */
+      min-width: 300px; /* عرض أدنى لضمان أن العناصر لا تصبح صغيرة جداً */
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden; /* للتخلص من أي تجاوز */
+      text-align: center;
+  }
+
+  /* تنسيق الإطارات */
+  .add iframe {
+      width: 100%;
+      height: 200px; /* ارتفاع الإطار داخل المربع */
+      border: 0;
+  }
+  /* تنسيق الحاويات */
+  .add .map-container {
+      background: #f9dfe9;
+      margin: 20px auto;
+      padding: 15px;
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* تنسيق العناوين الفرعية */
+  .add h2 {
+      font-size: 22px;
+      color: #222;
+      margin-bottom: 10px;
+
+  }
+
+  /* أيقونة العنوان */
+ .add i {
+      font-size: 28px;
+      color: #0e1012;
+      margin-right: 5px;
+      vertical-align: middle;
+  }
+</style>
+
+
+
+
+<div class="add" id="add">
+  
+  <h1>العناوين</h1>
+  
+  
+  <div class="map-container">
+      <h4> نجران</h4>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3804.1293255289816!2d44.21772007516877!3d17.549028383366046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDMyJzU2LjUiTiA0NMKwMTMnMTMuMSJF!5e0!3m2!1sen!2ssa!4v1731783505507!5m2!1sen!2ssa"></iframe>
+  </div>
+
+  <div class="map-container">
+      <h4> جدة</h4>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3709.9574666798517!2d39.29532758505789!3d21.587583285698354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDM1JzE1LjMiTiAzOcKwMTcnMzUuMyJF!5e0!3m2!1sar!2ssa!4v1731783571120!5m2!1sar!2ssa"></iframe>
+  </div>
+
+  <div class="map-container">
+      <h4> خميس مشيط</h4>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3787.8115959664797!2d42.70507758511028!3d18.310222187531938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDE4JzM2LjgiTiA0MsKwNDInMTAuNCJF!5e0!3m2!1sar!2ssa!4v1731783845982!5m2!1sar!2ssa"></iframe>
+  </div>
+</div>
+   
+   <!-- footer section starts  -->
+
+<section class="footer" id="con">
+
+   <div class="box-container">
+
+      <div class="box">
+        <div>
+          <img src="images/ee.png" alt="روزبيلا" width="380" height="auto">
+        </div>
+         
+
+         <i class="fas fa-envelope"></i>
+         <h3>الايميل</h3>
+         <p>rozabealla@gmail.com</p>
+         <i class="fa-solid fa-phone"></i>
+         <h3>الجوال</h3>
+         <p>0500000000</p>
+      
+      </div>
+
+   </div>
+   <div class="end">
+
+      &copy;   2024 | كل الحقوق محفوظة ل روزبيلا
+
+
+   </div>
+
+      </div>
+
+  
+</section>
+
+<!-- footer section ends -->
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+crossorigin="anonymous"></script>
+
+</body>
+</html>
